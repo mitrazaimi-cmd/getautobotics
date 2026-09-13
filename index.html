@@ -28,6 +28,7 @@
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
       <nav id="nav" class="nav" aria-label="Main">
+        <a href="#example-day">Before &amp; after</a>
         <a href="#services">Services</a>
         <a href="#approach">How we work</a>
         <a href="#values">Why Auto Botics</a>
@@ -39,89 +40,15 @@
   <main id="main">
     <!-- Hero -->
     <section class="hero" id="top">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <h1>We make AI work for your business.</h1>
-          <p class="lede">Auto Botics builds AI agents, chatbots and automations that take repetitive work off your plate, so your business keeps moving when you're not in the room.</p>
-          <div class="hero-actions">
-            <a class="btn" href="#contact">Book a free consultation</a>
-            <a class="btn btn-ghost" href="#services">See what we automate</a>
-          </div>
-          <p class="hero-note">Built for small and medium-sized businesses. No AI expertise required.</p>
+      <div class="wrap hero-center">
+        <img class="hero-logo" src="assets/logo.png" alt="Auto Botics" width="1200" height="644">
+        <h1>We make AI work for your business.</h1>
+        <p class="lede">Auto Botics builds AI agents, chatbots and automations that take repetitive work off your plate, so your business keeps moving when you're not in the room.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#contact">Book a free consultation</a>
+          <a class="btn btn-ghost" href="#example-day">See before &amp; after</a>
         </div>
-
-        <div class="day" data-mode="manual">
-          <svg class="orbit" viewBox="0 0 600 300" aria-hidden="true" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="orbitGrad" x1="0" x2="1">
-                <stop offset="0" stop-color="#1677E8"/>
-                <stop offset="1" stop-color="#19B8E6"/>
-              </linearGradient>
-            </defs>
-            <path d="M20 250 C 120 180, 420 120, 590 40 C 560 70, 360 170, 60 270 C 30 280, 10 268, 20 250 Z" fill="url(#orbitGrad)"/>
-          </svg>
-
-          <div class="day-card">
-            <div class="day-head">
-              <div>
-                <h2 class="day-title">An example Tuesday</h2>
-                <p class="day-sub">A 12-person service business</p>
-              </div>
-              <div class="switch" role="group" aria-label="Show the day">
-                <button type="button" data-set="manual" aria-pressed="true">Manual</button>
-                <button type="button" data-set="auto" aria-pressed="false">Automated</button>
-              </div>
-            </div>
-
-            <ul class="tasks">
-              <li>
-                <span class="tick" aria-hidden="true"></span>
-                <div>
-                  <p class="task">Reply to 38 customer emails</p>
-                  <p class="state" data-manual="You, for most of the morning" data-auto="AI agent drafted every reply. You approved 6."></p>
-                </div>
-                <span class="time" data-manual="2h 10m" data-auto="10m"></span>
-              </li>
-              <li>
-                <span class="tick" aria-hidden="true"></span>
-                <div>
-                  <p class="task">Follow up with 9 new leads</p>
-                  <p class="state" data-manual="3 went cold before anyone called" data-auto="All 9 contacted within 5 minutes"></p>
-                </div>
-                <span class="time" data-manual="1h 15m" data-auto="0m"></span>
-              </li>
-              <li>
-                <span class="tick" aria-hidden="true"></span>
-                <div>
-                  <p class="task">Book and confirm appointments</p>
-                  <p class="state" data-manual="Phone tag and missed voicemails" data-auto="Booked by chatbot, reminders sent"></p>
-                </div>
-                <span class="time" data-manual="45m" data-auto="0m"></span>
-              </li>
-              <li>
-                <span class="tick" aria-hidden="true"></span>
-                <div>
-                  <p class="task">Update the CRM</p>
-                  <p class="state" data-manual="Copying details from inbox to spreadsheet" data-auto="Synced automatically from every conversation"></p>
-                </div>
-                <span class="time" data-manual="1h 00m" data-auto="0m"></span>
-              </li>
-              <li>
-                <span class="tick" aria-hidden="true"></span>
-                <div>
-                  <p class="task">Answer "What are your hours?" 14 times</p>
-                  <p class="state" data-manual="Interrupting real work each time" data-auto="Website chatbot answered, day and night"></p>
-                </div>
-                <span class="time" data-manual="10m" data-auto="0m"></span>
-              </li>
-            </ul>
-
-            <div class="day-total" aria-live="polite">
-              <span>Owner's time on repetitive work</span>
-              <strong class="total" data-manual="5h 20m" data-auto="10m">5h 20m</strong>
-            </div>
-          </div>
-        </div>
+        <p class="hero-note">Built for small and medium-sized businesses. No AI expertise required.</p>
       </div>
     </section>
 
@@ -135,6 +62,90 @@
           <li>Grow the business</li>
           <li>Get your time back</li>
         </ol>
+      </div>
+    </section>
+
+    <!-- Example day: manual vs automated -->
+    <section class="section section-mist example" id="example-day" aria-labelledby="example-title">
+      <div class="wrap example-grid">
+        <div class="example-copy">
+          <h2 id="example-title">One day, with and without automation</h2>
+          <p>Same business, same workload. Switch to Automated and watch where the owner's time goes.</p>
+          <p class="example-note">An illustrative example for a 12-person service business.</p>
+        </div>
+
+          <div class="day" data-mode="manual">
+            <svg class="orbit" viewBox="0 0 600 300" aria-hidden="true" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="orbitGrad" x1="0" x2="1">
+                  <stop offset="0" stop-color="#1677E8"/>
+                  <stop offset="1" stop-color="#19B8E6"/>
+                </linearGradient>
+              </defs>
+              <path d="M20 250 C 120 180, 420 120, 590 40 C 560 70, 360 170, 60 270 C 30 280, 10 268, 20 250 Z" fill="url(#orbitGrad)"/>
+            </svg>
+
+            <div class="day-card">
+              <div class="day-head">
+                <div>
+                  <h3 class="day-title">An example Tuesday</h3>
+                  <p class="day-sub">A 12-person service business</p>
+                </div>
+                <div class="switch" role="group" aria-label="Show the day">
+                  <button type="button" data-set="manual" aria-pressed="true">Manual</button>
+                  <button type="button" data-set="auto" aria-pressed="false">Automated</button>
+                </div>
+              </div>
+
+              <ul class="tasks">
+                <li>
+                  <span class="tick" aria-hidden="true"></span>
+                  <div>
+                    <p class="task">Reply to 38 customer emails</p>
+                    <p class="state" data-manual="You, for most of the morning" data-auto="AI agent drafted every reply. You approved 6."></p>
+                  </div>
+                  <span class="time" data-manual="2h 10m" data-auto="10m"></span>
+                </li>
+                <li>
+                  <span class="tick" aria-hidden="true"></span>
+                  <div>
+                    <p class="task">Follow up with 9 new leads</p>
+                    <p class="state" data-manual="3 went cold before anyone called" data-auto="All 9 contacted within 5 minutes"></p>
+                  </div>
+                  <span class="time" data-manual="1h 15m" data-auto="0m"></span>
+                </li>
+                <li>
+                  <span class="tick" aria-hidden="true"></span>
+                  <div>
+                    <p class="task">Book and confirm appointments</p>
+                    <p class="state" data-manual="Phone tag and missed voicemails" data-auto="Booked by chatbot, reminders sent"></p>
+                  </div>
+                  <span class="time" data-manual="45m" data-auto="0m"></span>
+                </li>
+                <li>
+                  <span class="tick" aria-hidden="true"></span>
+                  <div>
+                    <p class="task">Update the CRM</p>
+                    <p class="state" data-manual="Copying details from inbox to spreadsheet" data-auto="Synced automatically from every conversation"></p>
+                  </div>
+                  <span class="time" data-manual="1h 00m" data-auto="0m"></span>
+                </li>
+                <li>
+                  <span class="tick" aria-hidden="true"></span>
+                  <div>
+                    <p class="task">Answer "What are your hours?" 14 times</p>
+                    <p class="state" data-manual="Interrupting real work each time" data-auto="Website chatbot answered, day and night"></p>
+                  </div>
+                  <span class="time" data-manual="10m" data-auto="0m"></span>
+                </li>
+              </ul>
+
+              <div class="day-total" aria-live="polite">
+                <span>Owner's time on repetitive work</span>
+                <strong class="total" data-manual="5h 20m" data-auto="10m">5h 20m</strong>
+              </div>
+            </div>
+          </div>
       </div>
     </section>
 
