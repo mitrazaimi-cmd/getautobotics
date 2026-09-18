@@ -1,0 +1,37 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# prisma generated client
+lib/generated/
+
+# env files (secrets)
+.env
+.env*.local
+
+# logs
+npm-debug.log*
+
+# misc
+.DS_Store
+.vercel
+coverage/
+
+# Not published: brand source documents, planning notes, local tooling
+# (kept on your computer; the repository is public)
+Auto_Botics_Brand_Guide_2026.pdf
+Auto_Botics_Brand_Guide_2026_Updated.md
+Auto_Botics_Website_Prompt.md
+PLAN.md
+experience.txt
+old/
+docs/
+.claude/
+# Duplicates of files already in public/ (leading slash = project root only)
+/Auto Botics logo.png
+/mitra.png

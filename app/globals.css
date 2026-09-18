@@ -1,0 +1,217 @@
+@import "tailwindcss";
+
+/*
+ * Auto Botics design tokens — source: Auto_Botics_Brand_Guide_2026_Updated.md §09, §12
+ * and design-system/auto-botics/MASTER.md.
+ * The default Tailwind palette is cleared so only brand colors can be used.
+ */
+@theme {
+  --color-*: initial;
+
+  --color-navy: #102a43;
+  --color-navy-900: #0b1f33;
+  --color-blue: #1677e8; /* large text (≥19px bold), buttons, underlines only */
+  --color-blue-hover: #0f5fc0;
+  --color-cyan: #19b8e6; /* icons, lines, accents — never text on white */
+  --color-white: #ffffff;
+
+  --color-muted: #486581; /* secondary text, 6.08:1 on white */
+  --color-surface: #f5f8fc;
+  --color-tint: #eaf2fd;
+  --color-line: rgb(16 42 67 / 0.12);
+  --color-line-strong: rgb(16 42 67 / 0.2);
+  --color-field: #6f8399; /* form control borders, 3.9:1 */
+  --color-on-navy-muted: #c9d6e3;
+
+  --color-danger: #b42318;
+  --color-danger-bg: #fdecea;
+  --color-success: #067647;
+  --color-success-bg: #e7f5ee;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --radius-card: 8px;
+
+  --ease-out-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white font-sans text-navy antialiased;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-bold tracking-[-0.02em] text-navy;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  /* Anchor targets clear the sticky header */
+  [id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-blue);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--color-tint);
+    color: var(--color-navy);
+  }
+
+  button,
+  [role="button"],
+  summary,
+  label[for],
+  select {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Inline link in body copy: navy text, blue underline (16px blue text fails AA) */
+  .link-inline {
+    @apply font-semibold text-navy underline decoration-blue decoration-2 underline-offset-4 transition-colors duration-150 hover:decoration-navy;
+  }
+
+  .eyebrow {
+    @apply text-sm font-semibold tracking-[0.08em] text-muted uppercase;
+  }
+
+}
+
+/* ── Brand intro animation (home page) ─────────────────────────────────────
+   Logo appears large and centered, then lifts away. Plays once per visit. */
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  background: var(--color-white);
+  pointer-events: none;
+  animation: intro-cover 1250ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+.intro-logo {
+  width: min(62vw, 400px);
+  height: auto;
+  animation: intro-logo 1250ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+@keyframes intro-cover {
+  0%,
+  62% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes intro-logo {
+  0% {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  22% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  62% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-2rem) scale(0.88);
+  }
+}
+
+/* Hero logo settles in under the intro */
+.hero-logo {
+  animation: hero-logo-in 700ms 120ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes hero-logo-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/*
+ * The intro plays on every load of the home page.
+ * To play it only once per visit instead, add this script to IntroAnimation.tsx
+ * (above the overlay) and keep the rule below:
+ *   try{var d=document.documentElement;if(sessionStorage.getItem('ab-intro')){
+ *     d.setAttribute('data-intro','seen')}else{sessionStorage.setItem('ab-intro','1')}}catch(e){}
+ */
+:root[data-intro="seen"] .intro {
+  display: none;
+}
+
+/* The visitor prefers less motion */
+@media (prefers-reduced-motion: reduce) {
+  .intro {
+    display: none;
+  }
+
+  .hero-logo {
+    animation: none;
+  }
+}
+
+/* Scroll reveal: content is visible by default; JS opts elements in. */
+@media (prefers-reduced-motion: no-preference) {
+  .js-reveal [data-reveal] {
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      opacity 400ms var(--ease-out-soft),
+      transform 400ms var(--ease-out-soft);
+    transition-delay: calc(var(--reveal-index, 0) * 60ms);
+  }
+
+  .js-reveal [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
