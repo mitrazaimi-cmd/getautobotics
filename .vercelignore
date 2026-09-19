@@ -1,0 +1,22 @@
+# Files never uploaded to Vercel (mirrors .gitignore's private list)
+
+# Local secrets and build output
+.env
+.env*.local
+node_modules
+.next
+coverage
+
+# Brand source documents, planning notes, local tooling
+Auto_Botics_Brand_Guide_2026.pdf
+Auto_Botics_Brand_Guide_2026_Updated.md
+Auto_Botics_Website_Prompt.md
+PLAN.md
+experience.txt
+old
+docs
+.claude
+
+# Duplicates of files already in public/
+/Auto Botics logo.png
+/mitra.png

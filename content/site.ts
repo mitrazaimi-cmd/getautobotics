@@ -14,7 +14,8 @@ export const site = {
 } as const;
 
 export const contact = {
-  email: "info@getAutoBotics.com",
+  /** Temporary until the getAutoBotics.com mailbox is set up — then switch back to info@getAutoBotics.com. */
+  email: "mitrazaimi@gmail.com",
   phone: "(818) 331-0900",
   /** Full profile URL — confirm this is the right one before launch. */
   linkedin: "https://www.linkedin.com/company/autobotics",
